@@ -1,0 +1,6 @@
+use command "python main.py" to run this code
+
+after run in terminal:
+    - pip install inquirer
+    - pip install simpledbf
+    - pip install pandas
