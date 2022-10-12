@@ -81,19 +81,19 @@ def data_f():
             z_score_col.append(z)
 
         df_zscore['z_score'] = z_score_col
+        plt.figure(figsize=(14, 8))
 
-        plt.figure(figsize=(10, 6))
+        plt.subplot(1, 2, 1)
 
+        s = [7 * 4 ** n for n in range(len(df_zscore['price']))]
         plt.scatter(df_zscore.index, df_zscore['price'], c=df_zscore["z_score"])
 
         plt.xlabel("number products")
         plt.ylabel("price")
 
         plt.title("Outlier by Z score")
-
-        plt.figure(figsize=(10, 6))
-
-        plt.boxplot(df_zscore['price'])
+        plt.subplot(1, 2, 2)
+        plt.boxplot(df_zscore['price'], flierprops=dict(markerfacecolor='y', marker='*'))
 
         plt.show()
 
