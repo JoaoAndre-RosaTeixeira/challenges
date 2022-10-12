@@ -30,7 +30,7 @@ def data_f():
     print_products_sum = "chiffre d'affaire par produit."
     print_sell_sum = "chiffre d'affaire total"
     print_graph_of_zscore = "afficher le graphique des aberration des prix par rapport au z score"
-    exit_app = "exit app"
+    exit_app = "exit data challenge"
 
     def choose():
         questions = [
@@ -90,6 +90,11 @@ def data_f():
         plt.ylabel("price")
 
         plt.title("Outlier by Z score")
+
+        plt.figure(figsize=(10, 6))
+
+        plt.boxplot(df_zscore['price'])
+
         plt.show()
 
     choose()
