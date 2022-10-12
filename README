@@ -1,6 +1,9 @@
 use command "python main.py" to run this code
 
-after run in terminal:
+Before run this programme in terminal enter :
     - pip install inquirer
     - pip install simpledbf
     - pip install pandas
+    - pip install openpyxl
+    - pip install matplotlib
+    - pip install numpy

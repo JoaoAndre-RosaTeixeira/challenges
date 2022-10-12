@@ -126,7 +126,7 @@ def dictionary_challenge():
                 if x > best_sell:
                     best_sell = x
                     best_vendeur_key = values.index(x)
-                if  x % 2 == 0:
+                if x % 2 == 0:
                     selling_pair_key.append(values.index(x))
         if id == 'name':
             for x in values:
