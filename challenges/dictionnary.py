@@ -118,6 +118,9 @@ def dictionary_challenge():
     best_vendeur_key = 0
     best_sell = 0
     selling_pair_key = []
+    # j'ai prefere tout faire dans une boucle pour simplement verifier
+    # si je suis dans cette colonne fait la moyenne, fait le meilleur vendeur,
+    # les vendeurs qui ont vendu par chiffre pair, trouve le meilleur vendeur
     for id, values in ventes_commerciaux.items():
         if id == 'ventes':
             for x in values:

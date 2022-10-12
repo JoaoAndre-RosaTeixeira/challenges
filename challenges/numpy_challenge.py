@@ -9,6 +9,7 @@ def start():
     paris = []
     berlin = []
 
+    # creation des colonne estPARIS estBerlin en fonction de la string retourner par data
     for i, data in df_marathon["city"].items():
         if data == "PARIS":
             paris.append(1)

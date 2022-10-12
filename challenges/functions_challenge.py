@@ -36,7 +36,7 @@ def functions_challenge():
         variance = sum(variance_list) / len(variance_list)
         return variance
 
-        # ecart type of myList
+    # ecart type of myList
     def ecart_type_list_f(list):
         ecart_type = pow(variance_list_f(list), 0.5)
         return ecart_type
