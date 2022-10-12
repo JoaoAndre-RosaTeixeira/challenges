@@ -1,6 +1,7 @@
 import inquirer
 import pandas as pd
 
+
 def start():
     max_len = 0
     dictionnaire_bien_choisi = {
@@ -9,8 +10,6 @@ def start():
                   'tyrion', 'shae', 'bronn', 'lancel', 'joffrey', 'sandor',
                   'varys', 'renly', 'a'}
     }
-
-
 
     # fonction pour rechercher le mot selon la position de la lettre
     def mots_lettre_position(liste, lettre, position):
@@ -25,7 +24,8 @@ def start():
     # avec condition afin d'eviter les erreurs de saisie
     def selection_letter():
         questions = [
-            inquirer.Confirm("selection_letter", message="enter the letter to reseacrh ?(base letter 'y' it's defined)", default=True),
+            inquirer.Confirm("selection_letter", message="enter the letter to reseacrh ?(base letter 'y' it's defined)",
+                             default=True),
         ]
         answers = inquirer.prompt(questions)
 
@@ -40,10 +40,10 @@ def start():
                 else:
                     return user_input
 
-
     letter_find = selection_letter()
     if letter_find == None:
         letter_find = "y"
+
     # permet d'ajouter un nouveau mot au dictrionnaire
     def new_word():
         questions = [
@@ -54,11 +54,8 @@ def start():
 
         if answers["new_word"] == True:
 
-
             while True:
                 user_input = input('Enter new word(letters only): ')
-
-
                 if not user_input.isalpha():
                     print('Enter only letters')
                     continue
@@ -73,11 +70,10 @@ def start():
             print(word, "obiwan fuckkin kenobi")
 
             dictionnaire_bien_choisi["words"].add(word)
+
     new_word()
 
-    print(dictionnaire_bien_choisi["words"])
     for word in dictionnaire_bien_choisi["words"]:
-        print(word)
         if len(word) > max_len:
             max_len = len(word)
     choose_position = [*range(1, max_len + 1)]
@@ -91,5 +87,4 @@ def start():
 
     answers = inquirer.prompt(questions)
 
-    print(mots_lettre_position(dictionnaire_bien_choisi["words"], letter_find, answers["position"]))
-
+    print(f'les mots trouvé à la position {answers["position"]} avec la lettre {letter_find} sont { mots_lettre_position(dictionnaire_bien_choisi["words"], letter_find, answers["position"])}')
